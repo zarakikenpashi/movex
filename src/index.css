@@ -1,0 +1,22 @@
+@font-face {
+    font-family: Grostesk;
+    src: url(assets/fonts/NHaasGroteskTXPro-55Rg.ttf);
+}
+@font-face {
+    font-family: GrosteskMd;
+    src: url(assets/fonts/NHaasGroteskTXPro-65Md.ttf);
+}
+@font-face {
+    font-family: GrosteskBd;
+    src: url(assets/fonts/NHaasGroteskTXPro-75Bd.ttf);
+}
+
+@import "tailwindcss";
+
+@theme{
+    --color-dark:#200C43;
+    --color-purple: #6927DA;
+    --color-gray: #f7f6f9;
+    --color-light: #e9e3fe;
+    --font-grotesk: Grostesk, "sans-serif"
+}
