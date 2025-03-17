@@ -18,5 +18,8 @@
     --color-purple: #6927DA;
     --color-gray: #f7f6f9;
     --color-light: #e9e3fe;
-    --font-grotesk: Grostesk, "sans-serif"
+    --font-grotesk: Grostesk, "sans-serif";
+    --font-groteskMD: GrosteskMd, "sans-serif";
+    --font-groteskBd: GrosteskBd, "sans-serif";
+
 }
