@@ -23,7 +23,9 @@ const Topbar = () => {
                 className="flex items-center gap-x-1 cursor-pointer border-2 border-gray px-2 py-1 rounded-md"
                 onClick={()=>setOpen(!open)}
             >
-                <span className="bg-[#ffD980] rounded-full size-4 flex"><img src="https://api.dicebear.com/9.x/notionists/svg" /></span>
+                <span className="bg-[#ffD980] rounded-full size-4 flex">
+                    <img src="https://api.dicebear.com/9.x/notionists/svg" />
+                </span>
                 <div className="text-sm">Washim Showludury</div>
                 <IoChevronDownOutline  className="text-sm"/>
             </button>

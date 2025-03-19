@@ -21,5 +21,13 @@
     --font-grotesk: Grostesk, "sans-serif";
     --font-groteskMD: GrosteskMd, "sans-serif";
     --font-groteskBd: GrosteskBd, "sans-serif";
+}
 
+.custom-scroll {
+    scrollbar-width: thin; /* Pour Firefox */
+    scrollbar-color: #6927DA #fff;
+}
+
+.custom-scroll:hover {
+    scrollbar-color: #6927DA #fff;
 }
