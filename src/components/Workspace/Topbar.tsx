@@ -26,7 +26,7 @@ const Topbar = () => {
                 <span className="bg-[#ffD980] rounded-full size-4 flex">
                     <img src="https://api.dicebear.com/9.x/notionists/svg" />
                 </span>
-                <div className="text-sm">Washim Showludury</div>
+                <div className="text-sm">Luffy D. Monkey</div>
                 <IoChevronDownOutline  className="text-sm"/>
             </button>
             <div className={`absolute  text-sm right-0 top-8 bg-gray px-1.5 py-2 ${open ? 'block' : 'hidden'}`}>

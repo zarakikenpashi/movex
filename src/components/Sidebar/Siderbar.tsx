@@ -29,8 +29,8 @@ const Siderbar = () => {
                   className="size-8 rounded-full shrink-0 bg-[#ffD980] shadow"
                 />
                 <div className="text-start">
-                  <span className="text-sm font-bold block">Tom Is Loading</span>
-                  <span className="text-xs block">tom@hover.dev</span>
+                  <span className="text-sm font-bold block">Luffy D Monkey</span>
+                  <span className="text-xs block">luffy@onepiece.dev</span>
                 </div>
               </button>
             </div>
