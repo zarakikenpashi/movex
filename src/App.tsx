@@ -4,7 +4,7 @@ import Workspace from "./components/Workspace/Workspace"
 
 const App = () => {
   return (
-    <div className="h-screen overflow-hidden font-grotesk grid grid-rows-[46px_1fr] lg:grid-rows-none lg:grid-cols-[250px_1fr] ">
+    <div className="h-screen overflow-hidden grid grid-rows-[60px_1fr] lg:grid-rows-none lg:grid-cols-[250px_1fr] ">
       <Siderbar />
       <Workspace />
     </div>

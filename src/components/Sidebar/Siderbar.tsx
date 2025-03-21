@@ -1,8 +1,8 @@
 import { FaRegUserCircle } from "react-icons/fa";
-import { IoCar, IoChevronUpOutline, IoSettingsOutline } from "react-icons/io5";
+import { IoCar, IoChevronUpOutline,IoSettingsOutline } from "react-icons/io5";
 import { IoChevronDownOutline, IoHomeOutline } from "react-icons/io5"
 import { GoAlert } from "react-icons/go";
-import { CiClock2 } from "react-icons/ci";
+import { CiClock2, CiMenuFries } from "react-icons/ci";
 import { LiaKeySolid } from "react-icons/lia";
 import { BsFileEarmarkPdf, BsPeople } from "react-icons/bs";
 import { LuBox, LuFuel } from "react-icons/lu";
@@ -13,11 +13,12 @@ import { useState } from "react";
 
 const Siderbar = () => {
   const [collapse, setCollapse] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="bg-gray overflow-y-scroll custom-scroll">
-      <div className="flex flex-col  h-full py-4 pr-2 pl-0.5 justify-between">
-        
+    <div className="bg-gray lg:overflow-y-scroll lg:custom-scroll">
+
+      <div className="hidden lg:flex flex-col  h-full py-4 pr-2 pl-0.5 justify-between">
         <div className="flex flex-col">
           <div className="flex flex-col justify-center items-center gap-y-1">
             <img src={logo} alt="" className="w-42" />
@@ -171,7 +172,148 @@ const Siderbar = () => {
         </div>
       </div>
 
+      <div className="relative h-full block lg:hidden">
+        <div className="flex justify-between h-full items-center px-4 lg:hidden">
+          <button className="p-0.5" onClick={() => setIsOpen(!isOpen)}>
+            <CiMenuFries className="text-lg"  />
+          </button>
+          <img src={logo} alt="" className="w-32" />
+          <button className="p-0.5 rounded">
+            <img
+              src="https://api.dicebear.com/9.x/notionists/svg"
+              alt="avatar"
+              className="size-8 rounded-full shrink-0 bg-[#ffD980] shadow"
+            />
+          </button>
+        </div>
+        <div className={`absolute overflow-y-scroll bg-gray z-50 top-[60px]  w-screen h-screen ${isOpen ? ' block' : 'hidden'}`}>
+          <nav className="flex  flex-col gap-y-2">
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <IoHomeOutline className="text-sm" />
+                <span>Dashboard</span>
+              </span>
+            </a>
+            
+            <button className="flex flex-col">
+              <button className="px-10  cursor-pointer flex w-full justify-between items-center bg-light text-dark font-groteskMD py-1 border-s-2 rounded-r-md" onClick={()=>setCollapse(!collapse)}>
+                <span className="flex items-center gap-x-2 text-sm">
+                  <IoCar className="text-sm" />
+                  <span>Vehicules</span>
+                </span>
+                <IoChevronUpOutline  className={`text-sm ${ collapse ? '-rotate-180' : '' } `}/>
+              </button>
+              <div className={`px-16 flex flex-col ${collapse?'h-0':'h-auto'}`}>
+                {
+                  !collapse 
+                  && 
+                  <>
+                    <a href="#" className="text-sm text-purple font-bold py-2 flex items-center gap-x-3 w-full">
+                      <span className="w-2 h-2 bg-purple rounded-full"></span>
+                      <span>Liste des vehicules</span>
+                    </a>
+                    <a href="#" className="text-sm font-thin py-2 flex items-center gap-x-3 w-full">
+                      <span className="w-2 h-2 bg-[#d9d8db] rounded-full"></span>
+                      <span>Vehicule Assignement</span>
+                    </a>
+                    <a href="#" className="text-sm font-thin py-2 flex items-center gap-x-3 w-full">
+                      <span className="w-2 h-2 bg-[#d9d8db] rounded-full"></span>
+                      <span>Meter History</span>
+                    </a>
+                    <a href="#" className="text-sm font-thin py-2 flex items-center gap-x-3 w-full">
+                      <span className="w-2 h-2 bg-[#d9d8db] rounded-full"></span>
+                      <span>Expenses history</span>
+                    </a>
+                    <a href="#" className="text-sm font-thin py-2 flex items-center gap-x-3 w-full">
+                      <span className="w-2 h-2 bg-[#d9d8db] rounded-full"></span>
+                      <span>Remplacement analysis</span>
+                    </a>
+                  </>
+                }
+
+              </div>
+            </button>
+            <a href="#" className="flex justify-between items-center px-10 py-1 border-s-2 border-gray hover:bg-light  hover:border-dark hover:rounded-r-md">
+              <span className="flex items-center gap-x-2 text-sm">
+                <IoCar  className="text-sm" />
+                <span>Equipement</span>
+              </span>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <FaRegUserCircle className="text-sm" />
+                <span>Inspections</span>
+              </span>
+              <IoChevronDownOutline  className="text-sm"/>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <GoAlert />
+                <span>Issues</span>
+              </span>
+              <IoChevronDownOutline  className="text-sm"/>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <CiClock2 />
+                <span>Reminders</span>
+              </span>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <LiaKeySolid className="text-sm" />
+                <span>Services</span>
+              </span>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <BsPeople className="text-sm" />
+                <span>Contacts</span>
+              </span>
+              <IoChevronDownOutline  className="text-sm"/>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <LuBox className="text-sm" />
+                <span>Vendors</span>
+              </span>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <FiSidebar className="text-sm" />
+                <span>Parts</span>
+              </span>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <LuFuel className="text-sm" />
+                <span>Fuel History</span>
+              </span>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <MdOutlinePlace className="text-sm" />
+                <span>Places</span>
+              </span>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10 py-1">
+              <span className="flex items-center gap-x-2 text-sm">
+                <BsFileEarmarkPdf className="text-sm" />
+                <span>Documents</span>
+              </span>
+            </a>
+            <a href="#" className="flex justify-between items-center px-10">
+              <span className="flex items-center gap-x-2 text-sm">
+                <BsFileEarmarkPdf className="text-sm" />
+                <span>Reports</span>
+              </span>
+              <IoChevronDownOutline  className="text-sm"/>
+            </a>
+          </nav>
+        </div>
+      </div>
     </div>
+
   )
 }
 
