@@ -10,13 +10,14 @@ import { FiSidebar } from "react-icons/fi";
 import { MdOutlinePlace } from "react-icons/md";
 import logo from '../../assets/logo.svg'
 import { useState } from "react";
+import { RiCloseLargeFill } from "react-icons/ri";
 
 const Siderbar = () => {
   const [collapse, setCollapse] = useState(true)
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="bg-gray lg:overflow-y-scroll lg:custom-scroll">
+    <div className="bg-gray custom-scroll lg:overflow-y-scroll ">
 
       <div className="hidden lg:flex flex-col  h-full py-4 pr-2 pl-0.5 justify-between">
         <div className="flex flex-col">
@@ -175,7 +176,11 @@ const Siderbar = () => {
       <div className="relative h-full block lg:hidden">
         <div className="flex justify-between h-full items-center px-4 lg:hidden">
           <button className="p-0.5" onClick={() => setIsOpen(!isOpen)}>
-            <CiMenuFries className="text-lg"  />
+            {
+              isOpen ? <RiCloseLargeFill  className="text-lg"  /> : <CiMenuFries className="text-lg"  />
+            }
+            
+            
           </button>
           <img src={logo} alt="" className="w-32" />
           <button className="p-0.5 rounded">
